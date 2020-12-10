@@ -1,7 +1,7 @@
 const express = require('express');
 const fileUpload = require('express-fileupload');
+const fs = require('fs');
 const pdf = require('pdf-parse');
-
 
 const app = express();
 
@@ -15,8 +15,13 @@ app.post('/upload', (req, res) => {
 
   const file = req.files.file;
 
+  var uploadDir = `${__dirname}/client/public/uploads`;
 
-  file.mv(`${__dirname}/client/public/uploads/${file.name}`, err => {
+  if(!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir);
+  }
+
+  file.mv(`${uploadDir}/${file.name}`, err => {
     if (err) {
       console.error(err);
       return res.status(500).send(err);

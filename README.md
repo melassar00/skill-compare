@@ -1,6 +1,8 @@
-# React File Upload
+# Skill Compare
 
-> This is a full stack React-Express file uploader but could easily be modified to work with any back-end including cloud storage
+Compare the skills listed on your resume with the qualifications listed in a company's job description.
+
+Uses a full stack React-Express file uploader but could easily be modified to work with any back-end including cloud storage.
 
 ## Quick Start
 
